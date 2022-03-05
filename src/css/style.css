@@ -1,0 +1,39 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "header"
+                        "hero"
+                        "sobre"
+                        "aulas"
+                        "game"
+                        "footer";
+    font-size: 1.6rem;
+}
+
+.header {
+    grid-area: header;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+.sobre {
+    grid-area: sobre;
+}
+
+.aulas {
+    grid-area: aulas;
+}
+
+.game {
+    grid-area: game;
+}
+
+.footer {
+    grid-area: footer;
+}

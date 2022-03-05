@@ -1,0 +1,60 @@
+.sobre {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /* height: 75vh; */
+}
+
+.sobre .texto-sobre {
+    background-color: var(--azul);
+    display: flex;
+    flex-direction: column;
+    padding: 20%;
+    justify-content: center;
+    align-content: center;
+}
+
+.sobre .texto-sobre h2 {
+    color: var(--rosa);
+    font-family: var(--fonte-yesteryear);
+    font-weight: 700;
+    font-size: 8rem;
+}
+
+.sobre .texto-sobre p {
+    margin-bottom: 10%;
+    color: var(--rosa);
+    font-size: 2rem;
+}
+
+.sobre .imagem-sobre {
+    background: url('../../images/pozzi_cropped.jpg') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 900px) {
+  .sobre .texto-sobre {
+        text-align: center;
+    }
+
+    .sobre .texto-sobre p {
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width: 425px) {
+    .sobre {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60% 40%;
+        height: 100vh;
+    }
+
+    .sobre .texto-sobre {
+        text-align: center;
+    }
+
+    .sobre .texto-sobre p {
+        font-size: 1.6rem;
+    }
+}

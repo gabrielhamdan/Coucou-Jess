@@ -1,0 +1,64 @@
+.header {
+    background-color: var(--azul);
+}
+
+.header .header-container {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo h1 {
+    font-size: 0;
+}
+
+.header .logo {
+    background: url(../../images/logo.png) center center no-repeat;
+    background-size: 85px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.header .logo:hover {
+    background: url(../../images/logo_laranja.png) center center no-repeat;
+    background-size: 85px;
+    width: 85px;
+    height: 85px;
+}
+
+.header nav ul {
+    display: flex;
+}
+
+.header nav ul li a {
+    color: var(--rosa);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.2s ease-in-out;
+}
+
+.header nav ul li a:hover {
+    color: var(--azul);
+    background-color: var(--laranja);
+}
+
+@media(max-width: 900px) {
+    .header .header-container {
+        height: 50vh;
+    }
+
+    .header .header-container,
+    .header nav ul {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .header nav ul li{
+        margin: 20px;
+    }
+}
