@@ -48,7 +48,7 @@
 .aulas .item-container h3,
 .aulas .item-container p,
 .filtro {
-    transition: 0.2s ease;
+    transition: 0.2s ease-in;
 }
 
 .aulas .item-container:hover .filtro {

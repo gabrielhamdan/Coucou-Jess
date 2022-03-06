@@ -8,12 +8,15 @@
     position: relative;
 }
 
+.logo-container {
+    align-self: center;
+}
+
 .footer .logo {
     background: url(../../images/logo_rodape.png) center center no-repeat;
     background-size: 85%;
     width: 85px;
     height: 85px;
-    align-self: center;
 }
     
 .footer .logo h4{
