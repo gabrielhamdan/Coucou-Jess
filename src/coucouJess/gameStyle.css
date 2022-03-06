@@ -1,0 +1,36 @@
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.play-area {
+    width: 800px;
+    height: 500px;
+    border: solid black 1px;
+    margin-right: 10%;
+    position: relative;
+}
+
+.jess {
+    width: 120px;
+    height: 160px;
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+
+    animation: idle 0.8s infinite alternate;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+@-webkit-keyframes idle {
+    0% {
+        content: url(../coucouJess/sprites/idle01.png);
+    }
+    100% {
+        content: url(../coucouJess/sprites/idle02.png);
+    }
+}
