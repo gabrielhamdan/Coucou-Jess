@@ -8,6 +8,32 @@
     display: none;
 }
 
+.ui {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.controls {
+    text-align: center;
+    max-width: 300px;
+}
+
+.pc .word-display p {
+    color: var(--preto);
+    font-size: 8rem;
+    text-align: center;
+    font-family: var(--fonte-yesteryear);
+}
+
+.pc .word-display .word-description {
+    font-family: var(--fonte-roboto);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 5%;
+}
+
 .play-area {
     width: 1100px;
     height: 300px;
@@ -21,6 +47,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 1;
 
     animation: idle 0.8s infinite alternate;
 
@@ -54,7 +81,7 @@
 }
 
 @media(max-width: 900px) {
-    .play-area {
+    .play-area, .ui {
         display: none;
     }
 

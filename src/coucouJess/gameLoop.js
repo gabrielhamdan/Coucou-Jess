@@ -1,4 +1,4 @@
-//variables
+// game setup
 
 const playArea = document.querySelector('.play-area');
 
@@ -8,10 +8,6 @@ player.classList.add('jess');
 playArea.appendChild(player);
 
 const boxArray = [];
-
-let currentPos = 0;
-let jumpHeight = 0;
-let onGround = true;
 
 let alphabet = ['b', 'c', 'd', 'a', 'e', 'i', 'o', 'u'];
 alphabet = alphabet.sort(() => Math.random() - 0.5);
@@ -42,14 +38,43 @@ boxes.forEach(function (box) {
 })
 
 
+// game loop
+
+let word = 'coucou';
+let boxId;
+let guess;
+let guessedLetters = ["_ ", "_ ", "_ ", "_ ", "_ ", "_"];
+let lettersLeft = word.length
+const wordDisplay = document.querySelector('.word-guesses');
+
+function checkCharacter() {
+    if (word.indexOf(guess) != -1) {
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === guess) {
+                guessedLetters[i] = guess;
+                lettersLeft--;
+            }
+        }
+    }
+
+    wordDisplay.innerHTML = guessedLetters.join('');
+
+    if (lettersLeft <= 0) {
+        console.log("game over")
+    }
+}
+
+
 // player movement
+
+let currentPos = 0;
+let jumpHeight = 0;
+let onGround = true;
 
 function slide(flip) {
     player.style.left = currentPos + 'px';
     flip === "left" ? player.style.transform = "scaleX(-1)" : player.style.transform = "scaleX(1)";
 }
-
-let boxId;
 
 function jump() {
     if (!onGround) {
@@ -60,7 +85,7 @@ function jump() {
         if (jumpHeight > 1) {
             clearInterval(jumpTimerId);
             let gravityTimerId = setInterval(function () {
-                jumpHeight -= 50
+                jumpHeight -= 45
                 player.style.bottom = jumpHeight + 'px';
                 if (jumpHeight < 0) {
                     clearInterval(gravityTimerId);
@@ -70,7 +95,7 @@ function jump() {
             }, 20)
         }
 
-        jumpHeight += 50
+        jumpHeight += 45
         player.style.bottom = jumpHeight + 'px';
 
         let boxNum;
@@ -78,15 +103,15 @@ function jump() {
         for (let i = 0; i < boxArray.length; i++) {
             boxNum = boxArray[i];
 
-            let playerCollision = { x: parseInt(window.getComputedStyle(player).getPropertyValue("left")), y: parseInt(window.getComputedStyle(player).getPropertyValue("top")), width: 120, height: 160 };
+            let playerCollision = { x: parseInt(window.getComputedStyle(player).getPropertyValue("left")), y: parseInt(window.getComputedStyle(player).getPropertyValue("top")), width: 75, height: 160 };
 
-            let boxCollision = { x: parseInt(window.getComputedStyle(boxNum).getPropertyValue("left")), y: parseInt(window.getComputedStyle(boxNum).getPropertyValue("top")), width: 50, height: 50 };
+            let boxCollision = { x: parseInt(window.getComputedStyle(boxNum).getPropertyValue("left")), y: parseInt(window.getComputedStyle(boxNum).getPropertyValue("top")), width: 25, height: 50 };
 
             if (playerCollision.x > boxCollision.x + boxCollision.width || playerCollision.x + playerCollision.width < boxCollision.x || playerCollision.y > boxCollision.y + boxCollision.height || playerCollision.y + playerCollision.height < boxCollision.y) {
 
             } else {
-                boxId = boxNum.id;
-                console.log(boxId)
+                guess = boxNum.id;
+                checkCharacter();
             }
         }
 
