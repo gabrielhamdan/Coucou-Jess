@@ -1,23 +1,26 @@
 .game {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
+}
+
+.mobile {
+    display: none;
 }
 
 .play-area {
-    width: 800px;
-    height: 500px;
-    border: solid black 1px;
-    margin-right: 10%;
+    width: 1100px;
+    height: 300px;
     position: relative;
+    border-bottom: solid #cf7f51dc 5px;
 }
 
 .jess {
     width: 120px;
     height: 160px;
     position: absolute;
-    bottom: 25%;
-    left: 10%;
+    bottom: 0;
+    left: 0;
 
     animation: idle 0.8s infinite alternate;
 
@@ -32,5 +35,69 @@
     }
     100% {
         content: url(../coucouJess/sprites/idle02.png);
+    }
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--rosa);
+    position: absolute;
+    text-align: center;
+}
+
+.box p {
+    font-family: var(--fonte-yesteryear);
+    font-size: 4rem;
+    color: var(--azul);
+}
+
+@media(max-width: 900px) {
+    .play-area {
+        display: none;
+    }
+
+    .game {
+        justify-content: center;
+    }
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .mobile h3 {
+        font-family: var(--fonte-yesteryear);
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--preto);
+    }
+    
+    .mobile i {
+        font-size: 4rem;
+        color: var(--preto);
+    }
+    
+    .mobile i:hover {
+        color: var(--rosa);
+    }
+
+    .jess {
+        width: 100px;
+        height: 130px;
+        bottom: 100px;
+        left: -30px;
+    }
+}
+
+@media(max-width: 425px) {
+    .jess {
+        width: 80px;
+        height: 105px;
+        left: -20px;
     }
 }

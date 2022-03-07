@@ -12,14 +12,14 @@
     align-self: center;
 }
 
-.footer .logo {
+.logo {
     background: url(../../images/logo_rodape.png) center center no-repeat;
     background-size: 85%;
     width: 85px;
     height: 85px;
 }
     
-.footer .logo h4{
+.logo h4{
     font-size: 0;
 }
 

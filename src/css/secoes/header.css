@@ -48,6 +48,7 @@
 @media(max-width: 900px) {
     .header .header-container {
         height: 50vh;
+        width: 100%;
     }
 
     .header .header-container,
