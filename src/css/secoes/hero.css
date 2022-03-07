@@ -2,11 +2,11 @@
     height: 80vh;
     background: url('../../images/coucouImage.png') center center no-repeat;
     background-color: var(--rosa);
+    background-size: 80%;
 }
 
 @media(max-width: 900px) {
     .hero {
         height: 50vh;
-        background-size: 75%;
     }
 }

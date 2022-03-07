@@ -11,7 +11,6 @@ const boxArray = [];
 
 let alphabet = ['b', 'c', 'd', 'a', 'e', 'i', 'o', 'u'];
 alphabet = alphabet.sort(() => Math.random() - 0.5);
-console.log(alphabet);
 
 let boxLeft = 0;
 
@@ -60,7 +59,7 @@ function checkCharacter() {
     wordDisplay.innerHTML = guessedLetters.join('');
 
     if (lettersLeft <= 0) {
-        console.log("game over")
+        gameOver()
     }
 }
 
@@ -70,6 +69,32 @@ function checkCharacter() {
 let currentPos = 0;
 let jumpHeight = 0;
 let onGround = true;
+
+document.addEventListener('keydown', move)
+
+function move(e) {
+    let min = 0;
+    let max = 1000;
+    if (currentPos <= min) {
+        currentPos = min;
+    } else if (currentPos >= max) {
+        currentPos = max;
+    }
+    switch (e.key) {
+        case 'ArrowLeft':
+            currentPos -= 15
+            slide("left")
+            break
+        case 'ArrowRight':
+            currentPos += 15
+            slide()
+            break
+        case ' ':
+            e.preventDefault()
+            jump()
+            onGround = false
+    }
+}
 
 function slide(flip) {
     player.style.left = currentPos + 'px';
@@ -118,28 +143,6 @@ function jump() {
     }, 20)
 }
 
-function move(e) {
-    let min = 0;
-    let max = 1000;
-    if (currentPos <= min) {
-        currentPos = min;
-    } else if (currentPos >= max) {
-        currentPos = max;
-    }
-    switch (e.key) {
-        case 'ArrowLeft':
-            currentPos -= 15
-            slide("left")
-            break
-        case 'ArrowRight':
-            currentPos += 15
-            slide()
-            break
-        case ' ':
-            e.preventDefault()
-            jump()
-            onGround = false
-    }
+function gameOver() {
+    console.log("game over")
 }
-
-document.addEventListener('keydown', move)

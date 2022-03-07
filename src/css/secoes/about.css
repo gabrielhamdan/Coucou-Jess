@@ -1,7 +1,6 @@
 .sobre {
     display: grid;
     grid-template-columns: 40% 60%;
-    /* height: 75vh; */
 }
 
 .sobre .texto-sobre {
