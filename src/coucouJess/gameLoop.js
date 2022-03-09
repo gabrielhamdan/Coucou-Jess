@@ -1,6 +1,6 @@
 // game setup
 
-const playArea = document.querySelector('.play-area');
+const playArea = document.getElementById('play-area');
 
 const player = document.createElement('div');
 player.classList.add('jess');
@@ -144,5 +144,36 @@ function jump() {
 }
 
 function gameOver() {
-    console.log("game over")
+    const controlsDiv = document.getElementById('controls')
+    const pcDiv = document.getElementById('pc')
+    const uiDiv = document.getElementById('ui')
+    const wordDescription = document.getElementById('word-description')
+    const wordDisplayDiv = document.getElementById('word-display')
+    const gameDiv = document.getElementById('game')
+    const mobileDiv = document.getElementById('mobile')
+
+    wordDescription.innerHTML = 'correto, a palavra é'
+
+    playArea.classList.add("fade");
+    playArea.style.opacity = '0';
+    controlsDiv.classList.add("fade");
+    controlsDiv.style.opacity = '0';
+    mobileDiv.style.opacity = '0';
+
+    setTimeout(() => {
+        pcDiv.removeChild(playArea);
+        uiDiv.removeChild(controlsDiv);
+        setTimeout(() => {
+            wordDisplayDiv.classList.add("fade");
+            wordDisplayDiv.style.opacity = "0"
+            setTimeout(() => {
+                gameDiv.removeChild(pcDiv);
+                mobileDiv.style.display = 'flex';
+                setTimeout(() => {
+                    mobileDiv.classList.add('fade');
+                    mobileDiv.style.opacity = '1';
+                }, 1000)
+            }, 1000)
+        }, 2000)
+    }, 800)
 }

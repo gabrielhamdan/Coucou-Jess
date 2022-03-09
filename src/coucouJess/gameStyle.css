@@ -6,6 +6,33 @@
 
 .mobile {
     display: none;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.mobile h3 {
+    font-family: var(--fonte-yesteryear);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--preto);
+}
+
+.mobile i {
+    font-size: 4rem;
+    color: var(--preto);
+}
+
+.mobile i:hover {
+    color: var(--rosa);
+}
+
+.jess {
+    width: 100px;
+    height: 130px;
+    bottom: 100px;
+    left: -30px;
 }
 
 .ui {
@@ -18,6 +45,11 @@
 .controls {
     text-align: center;
     max-width: 300px;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 .pc .word-display p {
@@ -91,33 +123,6 @@
 
     .mobile {
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        position: relative;
-    }
-    
-    .mobile h3 {
-        font-family: var(--fonte-yesteryear);
-        font-size: 3rem;
-        margin-bottom: 20px;
-        color: var(--preto);
-    }
-    
-    .mobile i {
-        font-size: 4rem;
-        color: var(--preto);
-    }
-    
-    .mobile i:hover {
-        color: var(--rosa);
-    }
-
-    .jess {
-        width: 100px;
-        height: 130px;
-        bottom: 100px;
-        left: -30px;
     }
 }
 
