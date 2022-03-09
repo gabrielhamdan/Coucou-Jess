@@ -5,7 +5,7 @@
 Desenvolvi esta landing page para pôr em prática meu conhecimento nas tecnologias que venho estudando. Agradeço gentilmente à professora Jéssica Pozzi (minha amada esposa ❤) por ter me cedido sua imagem e sua marca para a realização do projeto.
 
 
-## 🧱 Tecnologias utilizadas
+## 🛠 Tecnologias utilizadas
 <p>
    <img height="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
    <img height="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
