@@ -43,7 +43,6 @@ let word = 'coucou';
 let boxId;
 let guess;
 let guessedLetters = ["_ ", "_ ", "_ ", "_ ", "_ ", "_"];
-let lettersLeft = word.length
 const wordDisplay = document.querySelector('.word-guesses');
 
 function checkCharacter() {
@@ -51,15 +50,15 @@ function checkCharacter() {
         for (let i = 0; i < word.length; i++) {
             if (word[i] === guess) {
                 guessedLetters[i] = guess;
-                lettersLeft--;
             }
         }
-    }
 
-    wordDisplay.innerHTML = guessedLetters.join('');
+        let currentGuess = guessedLetters.join('');
+        wordDisplay.innerHTML = currentGuess;
 
-    if (lettersLeft <= 0) {
-        gameOver()
+        if (currentGuess === word) {
+            gameOver()
+        }
     }
 }
 
